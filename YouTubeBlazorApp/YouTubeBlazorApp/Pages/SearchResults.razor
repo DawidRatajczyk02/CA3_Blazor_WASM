@@ -1,0 +1,51 @@
+﻿@page "/searchresults"
+@inject YouTubeService YouTubeService
+@using YouTubeBlazorApp.Services
+@using YouTubeBlazorApp.Models
+
+
+<h3>Search Videos</h3>
+<input @bind="SearchQuery" placeholder="Enter search term..." />
+<button @onclick="PerformSearch">Search</button>
+
+@if (!string.IsNullOrWhiteSpace(ErrorMessage))
+{
+    <p style="color: red;">@ErrorMessage</p>
+}
+else if (Videos != null && Videos.Any())
+{
+    <div>
+        @foreach (var video in Videos)
+        {
+            <div>
+                <img src="@video.Snippet.Thumbnails.Medium.Url" alt="@video.Snippet.Title" />
+                <h4>@video.Snippet.Title</h4>
+                <p>@video.Snippet.Description</p>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private string SearchQuery = string.Empty;
+    private string ErrorMessage;
+    private List<Item> Videos;
+
+    private async Task PerformSearch()
+    {
+        try
+        {
+            var response = await YouTubeService.SearchVideosAsync(SearchQuery);
+            Videos = response?.Items;
+
+            if (Videos == null || !Videos.Any())
+            {
+                ErrorMessage = "No videos found.";
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}";
+        }
+    }
+}

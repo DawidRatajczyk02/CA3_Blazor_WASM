@@ -37,10 +37,6 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\sample-data\\weather.json",
-      "PackagePath": "staticwebassets\\sample-data\\weather.json"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.YouTubeBlazorApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

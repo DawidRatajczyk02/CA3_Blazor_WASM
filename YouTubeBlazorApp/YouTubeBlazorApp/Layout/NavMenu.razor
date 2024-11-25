@@ -1,30 +1,31 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿<div class="top-row ps-3 navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">YouTubeBlazorApp</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+        <!-- Navbar Brand -->
+        <a class="navbar-brand" href="/">YouTubeBlazorApp</a>
+
+        <!-- Hamburger Menu Button -->
+        <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-    </div>
-</div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
+        <!-- Collapsible Navbar Content -->
+        <div class="@NavMenuCssClass navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <!-- Home Link -->
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        <span class="bi bi-house-door-fill"></span> Home
+                    </NavLink>
+                </li>
+                <!-- Search Videos Link -->
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="searchresults">
+                        <span class="bi bi-search"></span> Search Videos
+                    </NavLink>
+                </li>
+            </ul>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
+    </div>
 </div>
 
 @code {
