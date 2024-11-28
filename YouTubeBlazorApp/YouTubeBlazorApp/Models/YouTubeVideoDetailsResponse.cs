@@ -1,29 +1,15 @@
 ﻿namespace YouTubeBlazorApp.Models
 {
-    public class YouTubeSearchResponse
+    public class YouTubeVideoDetailsResponse
     {
         public string? Kind { get; set; }
         public string? Etag { get; set; }
-        public string? NextPageToken { get; set; }
-        public List<SearchItem>? Items { get; set; }
+        public List<VideoDetailsItem>? Items { get; set; }
 
-        // Nested PageInfo class (only one definition should exist)
-        public class PageInfo
+        public class VideoDetailsItem
         {
-            public int TotalResults { get; set; }
-            public int ResultsPerPage { get; set; }
-        }
-
-        public class SearchItem
-        {
-            public Id? Id { get; set; }
+            public string? Id { get; set; }
             public Snippet? Snippet { get; set; }
-        }
-
-        public class Id
-        {
-            public string? Kind { get; set; }
-            public string? VideoId { get; set; }
         }
 
         public class Snippet
@@ -35,6 +21,7 @@
             public Thumbnails? Thumbnails { get; set; }
             public string? ChannelTitle { get; set; }
             public string? LiveBroadcastContent { get; set; }
+            public string? CategoryId { get; set; }
         }
 
         public class Thumbnails
@@ -42,6 +29,8 @@
             public ThumbnailInfo? Default { get; set; }
             public ThumbnailInfo? Medium { get; set; }
             public ThumbnailInfo? High { get; set; }
+            public ThumbnailInfo? Standard { get; set; }
+            public ThumbnailInfo? Maxres { get; set; }
 
             public class ThumbnailInfo
             {

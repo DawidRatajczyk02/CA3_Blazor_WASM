@@ -1,0 +1,34 @@
+﻿@page "/video/{videoId}"
+@inject YouTubeService YouTubeService
+@using YouTubeBlazorApp.Services
+@using YouTubeBlazorApp.Models
+
+@code {
+    [Parameter]
+    public string VideoId { get; set; } = string.Empty;
+
+    private YouTubeVideoDetailsResponse.VideoDetailsItem? videoDetails;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await YouTubeService.GetVideoDetailsAsync(VideoId);
+        videoDetails = response.Items?.FirstOrDefault();
+    }
+}
+
+<h3>Video Details</h3>
+
+@if (videoDetails == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div>
+        <h4>@videoDetails.Snippet?.Title</h4>
+        <img src="@videoDetails.Snippet?.Thumbnails?.High?.Url" alt="@videoDetails.Snippet?.Title" />
+        <p>@videoDetails.Snippet?.Description</p>
+        <p><strong>Channel:</strong> @videoDetails.Snippet?.ChannelTitle</p>
+        <p><strong>Published:</strong> @videoDetails.Snippet?.PublishedAt</p>
+    </div>
+}

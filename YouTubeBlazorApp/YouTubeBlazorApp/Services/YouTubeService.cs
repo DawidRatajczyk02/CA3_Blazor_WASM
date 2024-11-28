@@ -1,6 +1,6 @@
-﻿using System.Net.Http.Json;
-using YouTubeBlazorApp.Models;
-
+﻿using System.Net.Http;
+using System.Net.Http.Json;
+using System.Text.Json;
 using YouTubeBlazorApp.Models;
 
 namespace YouTubeBlazorApp.Services
@@ -9,6 +9,7 @@ namespace YouTubeBlazorApp.Services
     {
         private readonly HttpClient _httpClient;
         private const string ApiKey = "AIzaSyC3k9SVlXWoIVIZIy2AMvuKKLbjSY6038M";
+        private const string BaseUrl = "https://www.googleapis.com/youtube/v3/";
 
         public YouTubeService(HttpClient httpClient)
         {
@@ -17,8 +18,16 @@ namespace YouTubeBlazorApp.Services
 
         public async Task<YouTubeSearchResponse> SearchVideosAsync(string query)
         {
-            var url = $"search?part=snippet&q={query}&type=video&key={ApiKey}";
-            return await _httpClient.GetFromJsonAsync<YouTubeSearchResponse>(url);
+            var url = $"{BaseUrl}search?part=snippet&q={query}&type=video&key={ApiKey}";
+            return await _httpClient.GetFromJsonAsync<YouTubeSearchResponse>(url)
+                ?? new YouTubeSearchResponse();
+        }
+
+        public async Task<YouTubeVideoDetailsResponse> GetVideoDetailsAsync(string videoId)
+        {
+            var url = $"{BaseUrl}videos?part=snippet&id={videoId}&key={ApiKey}";
+            return await _httpClient.GetFromJsonAsync<YouTubeVideoDetailsResponse>(url)
+                ?? new YouTubeVideoDetailsResponse();
         }
     }
 }

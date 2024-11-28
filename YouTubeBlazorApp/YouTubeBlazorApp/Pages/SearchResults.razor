@@ -1,51 +1,35 @@
-﻿@page "/searchresults"
+﻿@page "/"
 @inject YouTubeService YouTubeService
 @using YouTubeBlazorApp.Services
 @using YouTubeBlazorApp.Models
 
 
-<h3>Search Videos</h3>
-<input @bind="SearchQuery" placeholder="Enter search term..." />
-<button @onclick="PerformSearch">Search</button>
-
-@if (!string.IsNullOrWhiteSpace(ErrorMessage))
-{
-    <p style="color: red;">@ErrorMessage</p>
-}
-else if (Videos != null && Videos.Any())
-{
-    <div>
-        @foreach (var video in Videos)
-        {
-            <div>
-                <img src="@video.Snippet.Thumbnails.Medium.Url" alt="@video.Snippet.Title" />
-                <h4>@video.Snippet.Title</h4>
-                <p>@video.Snippet.Description</p>
-            </div>
-        }
-    </div>
-}
-
 @code {
-    private string SearchQuery = string.Empty;
-    private string ErrorMessage;
-    private List<Item> Videos;
+    private YouTubeSearchResponse? results;
+    private string searchQuery = string.Empty;
 
-    private async Task PerformSearch()
+    private async Task Search()
     {
-        try
-        {
-            var response = await YouTubeService.SearchVideosAsync(SearchQuery);
-            Videos = response?.Items;
+        results = await YouTubeService.SearchVideosAsync(searchQuery);
+    }
+}
 
-            if (Videos == null || !Videos.Any())
-            {
-                ErrorMessage = "No videos found.";
-            }
-        }
-        catch (Exception ex)
-        {
-            ErrorMessage = $"Error: {ex.Message}";
-        }
+<h3>Search YouTube Videos</h3>
+<input @bind="searchQuery" placeholder="Search..." />
+<button @onclick="Search">Search</button>
+
+@if (results?.Items == null || results.Items.Count == 0)
+{
+    <p>No results found.</p>
+}
+else
+{
+    @foreach (var item in results.Items)
+    {
+        <div>
+            <img src="@item.Snippet?.Thumbnails?.Medium?.Url" alt="@item.Snippet?.Title" />
+            <h4><a href="/video/@item.Id?.VideoId">@item.Snippet?.Title</a></h4>
+            <p>@item.Snippet?.Description</p>
+        </div>
     }
 }

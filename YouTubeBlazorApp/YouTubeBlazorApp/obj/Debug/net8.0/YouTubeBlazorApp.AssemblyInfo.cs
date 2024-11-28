@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YouTubeBlazorApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7055639e60de7bdba232128f29306e79f5451ec7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5e9c1e48929f7ced8c11b9e97cc2c09e7fc752c")]
 [assembly: System.Reflection.AssemblyProductAttribute("YouTubeBlazorApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YouTubeBlazorApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

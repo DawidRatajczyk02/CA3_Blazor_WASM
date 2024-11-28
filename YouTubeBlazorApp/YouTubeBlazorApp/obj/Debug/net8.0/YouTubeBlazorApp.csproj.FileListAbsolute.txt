@@ -1,3 +1,6 @@
+C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.CoreLib.wasm
+C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.Xml.wasm
+C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Transactions.Local.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\dotnet.js
@@ -125,11 +128,9 @@ C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\ne
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Numerics.Vectors.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Numerics.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.ObjectModel.wasm
-C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.CoreLib.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.DataContractSerialization.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.Uri.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.Xml.Linq.wasm
-C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Private.Xml.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.DispatchProxy.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Emit.ILGeneration.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Emit.Lightweight.wasm
@@ -190,7 +191,6 @@ C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\ne
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Threading.ThreadPool.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Timer.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Threading.wasm
-C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Transactions.Local.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Transactions.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.ValueTuple.wasm
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.wasm
@@ -846,7 +846,6 @@ C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\ne
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.YouTubeBlazorApp.props
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\staticwebassets.pack.json
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\scopedcss\Layout\MainLayout.razor.rz.scp.css
-C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\scopedcss\Layout\NavMenu.razor.rz.scp.css
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\scopedcss\bundle\YouTubeBlazorApp.styles.css
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\scopedcss\projectbundle\YouTubeBlazorApp.bundle.scp.css
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Debug\net8.0\compressed\rxbv9jq9p2.gz
