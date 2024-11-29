@@ -1,9 +1,15 @@
 ﻿namespace YouTubeBlazorApp.Models
 {
+    public class PageInfo
+    {
+        public int TotalResults { get; set; }
+        public int ResultsPerPage { get; set; }
+    }
     public class YouTubeSearchResponse
     {
         public string? Kind { get; set; }
         public string? Etag { get; set; }
+        public string? PrevPageToken { get; set; }
         public string? NextPageToken { get; set; }
         public List<SearchItem>? Items { get; set; }
 

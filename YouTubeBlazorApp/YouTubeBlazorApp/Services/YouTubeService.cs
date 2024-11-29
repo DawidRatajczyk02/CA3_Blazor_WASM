@@ -16,12 +16,19 @@ namespace YouTubeBlazorApp.Services
             _httpClient = httpClient;
         }
 
-        public async Task<YouTubeSearchResponse> SearchVideosAsync(string query)
+        public async Task<YouTubeSearchResponse> SearchVideosAsync(string query, string? pageToken = null)
         {
-            var url = $"{BaseUrl}search?part=snippet&q={query}&type=video&key={ApiKey}";
+            var url = $"{BaseUrl}search?part=snippet&q={query}&type=video&maxResults=6&key={ApiKey}";
+
+            if (!string.IsNullOrEmpty(pageToken))
+            {
+                url += $"&pageToken={pageToken}";
+            }
+
             return await _httpClient.GetFromJsonAsync<YouTubeSearchResponse>(url)
-                ?? new YouTubeSearchResponse();
+                   ?? new YouTubeSearchResponse();
         }
+
 
         public async Task<YouTubeVideoDetailsResponse> GetVideoDetailsAsync(string videoId)
         {

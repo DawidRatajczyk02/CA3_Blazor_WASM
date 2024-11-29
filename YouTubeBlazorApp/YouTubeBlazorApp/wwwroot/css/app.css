@@ -21,8 +21,8 @@ a, .btn-link {
 }
 
 .content {
-    padding-top: 1.1rem; /* Keep this if needed */
-    background: none; /* Ensures no background in .content */
+    padding-top: 1.1rem;
+    background: none;
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -104,8 +104,52 @@ code {
 }
 
 body {
-    background: none; /* Removes any background image or gradient */
-    background-color: white; /* Sets a plain white background */
-    margin: 0;
-    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
 }
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.06);
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.card-title, .card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #0056b3;
+}
+
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.text-center {
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+

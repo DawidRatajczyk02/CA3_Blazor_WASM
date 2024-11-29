@@ -1,5 +1,6 @@
 ﻿@page "/video/{videoId}"
 @inject YouTubeService YouTubeService
+@inject NavigationManager NavigationManager
 @using YouTubeBlazorApp.Services
 @using YouTubeBlazorApp.Models
 
@@ -14,21 +15,35 @@
         var response = await YouTubeService.GetVideoDetailsAsync(VideoId);
         videoDetails = response.Items?.FirstOrDefault();
     }
+
+    private void BackToSearch()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }
 
-<h3>Video Details</h3>
+<h3 class="text-center">Video Details</h3>
 
 @if (videoDetails == null)
 {
-    <p>Loading...</p>
+    <div class="text-center">
+        <p>Loading...</p>
+    </div>
 }
 else
 {
-    <div>
-        <h4>@videoDetails.Snippet?.Title</h4>
-        <img src="@videoDetails.Snippet?.Thumbnails?.High?.Url" alt="@videoDetails.Snippet?.Title" />
-        <p>@videoDetails.Snippet?.Description</p>
-        <p><strong>Channel:</strong> @videoDetails.Snippet?.ChannelTitle</p>
-        <p><strong>Published:</strong> @videoDetails.Snippet?.PublishedAt</p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="@videoDetails.Snippet?.Thumbnails?.High?.Url" class="img-fluid rounded" alt="@videoDetails.Snippet?.Title" />
+            </div>
+            <div class="col-md-6">
+                <h2>@videoDetails.Snippet?.Title</h2>
+                <p><strong>Description:</strong> @videoDetails.Snippet?.Description</p>
+                <p><strong>Channel:</strong> @videoDetails.Snippet?.ChannelTitle</p>
+                <p><strong>Published: </strong>@(!string.IsNullOrEmpty(videoDetails.Snippet?.PublishedAt)? DateTime.Parse(videoDetails.Snippet.PublishedAt).ToString("yyyy-MM-dd"): "N/A")</p>
+                <button class="btn btn-secondary mt-3" @onclick="BackToSearch">Back to Search</button>
+            </div>
+        </div>
     </div>
 }

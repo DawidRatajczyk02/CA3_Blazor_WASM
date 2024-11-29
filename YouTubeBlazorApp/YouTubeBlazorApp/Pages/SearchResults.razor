@@ -1,35 +1,148 @@
 ﻿@page "/"
 @inject YouTubeService YouTubeService
-@using YouTubeBlazorApp.Services
+@inject NavigationManager NavigationManager
 @using YouTubeBlazorApp.Models
-
+@using YouTubeBlazorApp.Services
 
 @code {
     private YouTubeSearchResponse? results;
     private string searchQuery = string.Empty;
+    private string? currentPageToken = null;
 
-    private async Task Search()
+    private async Task Search(string? pageToken = null)
     {
-        results = await YouTubeService.SearchVideosAsync(searchQuery);
+        results = await YouTubeService.SearchVideosAsync(searchQuery, pageToken);
+        currentPageToken = results?.NextPageToken;
+    }
+
+    private async Task GoToNextPage()
+    {
+        if (!string.IsNullOrEmpty(results?.NextPageToken))
+        {
+            await Search(results.NextPageToken);
+        }
+    }
+
+    private async Task GoToPreviousPage()
+    {
+        if (!string.IsNullOrEmpty(results?.PrevPageToken))
+        {
+            await Search(results.PrevPageToken);
+        }
     }
 }
 
-<h3>Search YouTube Videos</h3>
-<input @bind="searchQuery" placeholder="Search..." />
-<button @onclick="Search">Search</button>
+<h3 class="text-center">Search YouTube Videos</h3>
+<div class="d-flex justify-content-center mb-4">
+    <input @bind="searchQuery" placeholder="Search..." class="form-control w-50" />
+    <button @onclick="() => Search()" class="btn btn-primary ml-2">Search</button>
+</div>
 
 @if (results?.Items == null || results.Items.Count == 0)
 {
-    <p>No results found.</p>
+    <p class="text-center">No results found.</p>
 }
 else
 {
-    @foreach (var item in results.Items)
-    {
-        <div>
-            <img src="@item.Snippet?.Thumbnails?.Medium?.Url" alt="@item.Snippet?.Title" />
-            <h4><a href="/video/@item.Id?.VideoId">@item.Snippet?.Title</a></h4>
-            <p>@item.Snippet?.Description</p>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in results.Items)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img class="card-img-top" src="@item.Snippet?.Thumbnails?.High?.Url" alt="@item.Snippet?.Title" />
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Snippet?.Title</h5>
+                            <p class="card-text">@item.Snippet?.Description</p>
+                            <a href="/video/@item.Id.VideoId" class="btn btn-primary">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <!-- Previous Button -->
+            <button class="btn btn-secondary me-2" @onclick="PreviousPage" disabled="@(currentPage <= 1)">
+                Previous
+            </button>
+
+            <!-- Page Numbers -->
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <button class="btn @(i == currentPage ? "btn-primary" : "btn-outline-primary") mx-1"
+                        @onclick="(() => GoToPage(i))">
+                    @i
+                </button>
+            }
+
+            <!-- Next Button -->
+            <button class="btn btn-primary ms-2" @onclick="NextPage" disabled="@(currentPage >= totalPages)">
+                Next
+            </button>
+        </div>
+    </div>
+}
+
+@code {
+    private string? nextPageToken;
+    private string? previousPageToken;
+    private int currentPage = 1; // Start on the first page
+    private int totalPages = 6; // Example: explicitly setting to 6 pages
+    private Dictionary<int, string?> pageTokens = new(); // To store page tokens
+
+    private const int ResultsPerPage = 6; // Number of results to show per page
+
+    private async Task Search()
+    {
+        currentPage = 1; // Reset to the first page
+        pageTokens.Clear(); // Clear the stored tokens for new search
+        var response = await YouTubeService.SearchVideosAsync(searchQuery, null);
+        UpdateResults(response);
+    }
+
+    private async Task GoToPage(int page)
+    {
+        if (page < 1 || page > totalPages) return;
+
+        currentPage = page;
+        var token = pageTokens.ContainsKey(page) ? pageTokens[page] : null;
+
+        var response = await YouTubeService.SearchVideosAsync(searchQuery, token);
+        UpdateResults(response);
+    }
+
+    private async Task NextPage()
+    {
+        if (currentPage < totalPages)
+        {
+            currentPage++;
+            var response = await YouTubeService.SearchVideosAsync(searchQuery, nextPageToken);
+            UpdateResults(response);
+        }
+    }
+
+    private async Task PreviousPage()
+    {
+        if (currentPage > 1)
+        {
+            currentPage--;
+            var response = await YouTubeService.SearchVideosAsync(searchQuery, previousPageToken);
+            UpdateResults(response);
+        }
+    }
+
+    private void UpdateResults(YouTubeSearchResponse response)
+    {
+        results = response;
+
+        // Save tokens for each page
+        if (!pageTokens.ContainsKey(currentPage))
+            pageTokens[currentPage] = response.NextPageToken;
+
+        nextPageToken = response.NextPageToken;
+        previousPageToken = response.PrevPageToken;
     }
 }
+
