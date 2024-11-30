@@ -3,7 +3,7 @@
 test.describe('Blazor YouTube Search Tests', () => {
     // Navigate to the home page
     test('Should display the search bar and perform a search', async ({ page }) => {
-        // Navigate to your app (replace with your actual URL)
+        // Navigate to app
         await page.goto('https://localhost:7151');
 
         // Verify the search bar exists
