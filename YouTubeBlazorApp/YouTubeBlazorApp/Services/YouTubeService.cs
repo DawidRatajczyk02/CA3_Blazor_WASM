@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
-using System.Text.Json;
+﻿using System.Net.Http.Json;
 using YouTubeBlazorApp.Models;
 
 namespace YouTubeBlazorApp.Services
@@ -16,6 +14,7 @@ namespace YouTubeBlazorApp.Services
             _httpClient = httpClient;
         }
 
+        // Method to search videos
         public async Task<YouTubeSearchResponse> SearchVideosAsync(string query, string? pageToken = null)
         {
             var url = $"{BaseUrl}search?part=snippet&q={query}&type=video&maxResults=6&key={ApiKey}";
@@ -29,7 +28,7 @@ namespace YouTubeBlazorApp.Services
                    ?? new YouTubeSearchResponse();
         }
 
-
+        // Method to fetch video details for a specific video
         public async Task<YouTubeVideoDetailsResponse> GetVideoDetailsAsync(string videoId)
         {
             var url = $"{BaseUrl}videos?part=snippet&id={videoId}&key={ApiKey}";

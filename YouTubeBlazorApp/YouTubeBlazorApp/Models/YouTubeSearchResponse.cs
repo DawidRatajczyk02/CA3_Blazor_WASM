@@ -1,10 +1,13 @@
 ﻿namespace YouTubeBlazorApp.Models
 {
+    // Pagination information
     public class PageInfo
     {
         public int TotalResults { get; set; }
         public int ResultsPerPage { get; set; }
     }
+
+    // Main response model for YouTube Search API
     public class YouTubeSearchResponse
     {
         public string? Kind { get; set; }
@@ -13,7 +16,6 @@
         public string? NextPageToken { get; set; }
         public List<SearchItem>? Items { get; set; }
 
-        // Nested PageInfo class (only one definition should exist)
         public class PageInfo
         {
             public int TotalResults { get; set; }

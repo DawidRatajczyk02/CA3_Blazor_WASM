@@ -9,12 +9,14 @@
     private string searchQuery = string.Empty;
     private string? currentPageToken = null;
 
+    // Executes search
     private async Task Search(string? pageToken = null)
     {
         results = await YouTubeService.SearchVideosAsync(searchQuery, pageToken);
         currentPageToken = results?.NextPageToken;
     }
 
+    // Navigate to the next page of results
     private async Task GoToNextPage()
     {
         if (!string.IsNullOrEmpty(results?.NextPageToken))
@@ -23,6 +25,7 @@
         }
     }
 
+    // Navigate to the previous page of results
     private async Task GoToPreviousPage()
     {
         if (!string.IsNullOrEmpty(results?.PrevPageToken))
@@ -32,6 +35,7 @@
     }
 }
 
+<!-- HTML Page Layout -->
 <h3 class="text-center">Search YouTube Videos</h3>
 <div class="d-flex justify-content-center mb-4">
     <input @bind="searchQuery" placeholder="Search..." class="form-control w-50" />
@@ -71,10 +75,9 @@ else
             <!-- Page Numbers -->
             @for (int i = 1; i <= totalPages; i++)
             {
-                <button class="btn @(i == currentPage ? "btn-primary" : "btn-outline-primary") mx-1"
-                        @onclick="(() => GoToPage(i))">
+                <span class="btn @(i == currentPage ? "btn-primary" : "btn-outline-primary") mx-1">
                     @i
-                </button>
+                </span>
             }
 
             <!-- Next Button -->
@@ -88,31 +91,21 @@ else
 @code {
     private string? nextPageToken;
     private string? previousPageToken;
-    private int currentPage = 1; // Start on the first page
-    private int totalPages = 6; // Example: explicitly setting to 6 pages
-    private Dictionary<int, string?> pageTokens = new(); // To store page tokens
+    private int currentPage = 1;
+    private int totalPages = 6;
+    private Dictionary<int, string?> pageTokens = new();
+    private const int ResultsPerPage = 6;
 
-    private const int ResultsPerPage = 6; // Number of results to show per page
-
+    // Perform search and reset pagination
     private async Task Search()
     {
-        currentPage = 1; // Reset to the first page
-        pageTokens.Clear(); // Clear the stored tokens for new search
+        currentPage = 1;
+        pageTokens.Clear();
         var response = await YouTubeService.SearchVideosAsync(searchQuery, null);
         UpdateResults(response);
     }
 
-    private async Task GoToPage(int page)
-    {
-        if (page < 1 || page > totalPages) return;
-
-        currentPage = page;
-        var token = pageTokens.ContainsKey(page) ? pageTokens[page] : null;
-
-        var response = await YouTubeService.SearchVideosAsync(searchQuery, token);
-        UpdateResults(response);
-    }
-
+    // Navigate to the next page
     private async Task NextPage()
     {
         if (currentPage < totalPages)
@@ -123,6 +116,7 @@ else
         }
     }
 
+    // Navigate to the previous page
     private async Task PreviousPage()
     {
         if (currentPage > 1)
@@ -133,11 +127,11 @@ else
         }
     }
 
+    // Update results
     private void UpdateResults(YouTubeSearchResponse response)
     {
         results = response;
 
-        // Save tokens for each page
         if (!pageTokens.ContainsKey(currentPage))
             pageTokens[currentPage] = response.NextPageToken;
 

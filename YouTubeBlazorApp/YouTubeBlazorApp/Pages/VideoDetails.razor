@@ -10,18 +10,21 @@
 
     private YouTubeVideoDetailsResponse.VideoDetailsItem? videoDetails;
 
+    // Fetch video details
     protected override async Task OnInitializedAsync()
     {
         var response = await YouTubeService.GetVideoDetailsAsync(VideoId);
         videoDetails = response.Items?.FirstOrDefault();
     }
 
+    // Navigate back to the search page
     private void BackToSearch()
     {
         NavigationManager.NavigateTo("/");
     }
 }
 
+<!-- HTML Page Layout -->
 <h3 class="text-center">Video Details</h3>
 
 @if (videoDetails == null)

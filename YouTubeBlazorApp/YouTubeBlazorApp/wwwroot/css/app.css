@@ -1,5 +1,7 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 h1:focus {
@@ -12,60 +14,93 @@ a, .btn-link {
 
 .btn-primary {
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    background-color: #007bff;
+    border-color: #0056b3;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.btn:focus, .btn:active:focus, .form-control:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
     padding-top: 1.1rem;
-    background: none;
 }
 
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
 }
 
-.invalid {
-    outline: 1px solid red;
+    .card:hover {
+        transform: scale(1.06);
+    }
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-title, .card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.text-center {
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .validation-message {
     color: red;
 }
 
-#blazor-error-ui {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
+    .btn-secondary:hover {
+        background-color: #5a6268;
     }
 
-.blazor-error-boundary {
-    background: none;
-    padding: 0;
-    color: inherit;
+.d-flex {
+    display: flex;
 }
 
-    .blazor-error-boundary::after {
-        content: "An error has occurred."
-    }
+.justify-content-center {
+    justify-content: center;
+}
 
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.me-2, .ms-2 {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+/* Blazor Loading Circle */
 .loading-progress {
     position: relative;
     display: block;
@@ -98,58 +133,4 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
-
-code {
-    color: #c02d76;
-}
-
-body {
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-.card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.06);
-}
-
-.card-img-top {
-    height: 150px;
-    object-fit: cover;
-}
-
-.img-fluid {
-    max-height: 300px;
-    object-fit: cover;
-}
-
-.card-title, .card-text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border-color: #0056b3;
-}
-
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-    }
-
-.text-center {
-    margin-top: 20px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 

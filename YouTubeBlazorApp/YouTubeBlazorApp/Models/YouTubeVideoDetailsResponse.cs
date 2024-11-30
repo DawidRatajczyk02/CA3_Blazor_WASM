@@ -1,5 +1,6 @@
 ﻿namespace YouTubeBlazorApp.Models
 {
+    // Response for detailed YouTube video data
     public class YouTubeVideoDetailsResponse
     {
         public string? Kind { get; set; }

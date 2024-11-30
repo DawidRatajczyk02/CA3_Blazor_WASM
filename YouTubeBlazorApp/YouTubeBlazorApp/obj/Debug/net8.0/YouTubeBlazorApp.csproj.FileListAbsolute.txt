@@ -1,4 +1,3 @@
-C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.wasm.gz
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\dotnet.js
@@ -402,6 +401,7 @@ C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\ne
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XDocument.wasm.gz
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.FileVersionInfo.wasm.gz
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Emit.ILGeneration.wasm.gz
+C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.wasm.gz
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\Newtonsoft.Json.wasm.gz
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.wasm.gz
 C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.CSharp.wasm.gz
