@@ -70,44 +70,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SearchResults.razor",
-              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Pages\\SearchResults.razor",
-              "RelativeDocumentMoniker": "YouTubeBlazorApp\\Pages\\SearchResults.razor",
-              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Pages\\SearchResults.razor",
-              "RelativeToolTip": "YouTubeBlazorApp\\Pages\\SearchResults.razor",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T21:44:22.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "YouTubeBlazorApp\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "YouTubeBlazorApp\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T21:15:11.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\_Imports.razor",
-              "RelativeDocumentMoniker": "YouTubeBlazorApp\\_Imports.razor",
-              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\_Imports.razor",
-              "RelativeToolTip": "YouTubeBlazorApp\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T21:17:24.717Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
@@ -130,8 +94,44 @@
               "RelativeToolTip": "YouTubeBlazorApp\\wwwroot\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-21T14:17:54.114Z",
+              "WhenOpened": "2024-11-21T14:17:54.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "search.spec.js",
+              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\tests\\search.spec.js",
+              "RelativeDocumentMoniker": "YouTubeBlazorApp\\tests\\search.spec.js",
+              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\tests\\search.spec.js",
+              "RelativeToolTip": "YouTubeBlazorApp\\tests\\search.spec.js",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAD0AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-29T21:40:37.85Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\_Imports.razor",
+              "RelativeDocumentMoniker": "YouTubeBlazorApp\\_Imports.razor",
+              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\_Imports.razor",
+              "RelativeToolTip": "YouTubeBlazorApp\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T21:17:24.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "YouTubeBlazorApp\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "YouTubeBlazorApp\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T21:15:11.178Z"
             },
             {
               "$type": "Document",
@@ -170,16 +170,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "search.spec.js",
-              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\tests\\search.spec.js",
-              "RelativeDocumentMoniker": "YouTubeBlazorApp\\tests\\search.spec.js",
-              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\tests\\search.spec.js",
-              "RelativeToolTip": "YouTubeBlazorApp\\tests\\search.spec.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-11-29T21:40:37.85Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "SearchResults.razor",
+              "DocumentMoniker": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Pages\\SearchResults.razor",
+              "RelativeDocumentMoniker": "YouTubeBlazorApp\\Pages\\SearchResults.razor",
+              "ToolTip": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\Pages\\SearchResults.razor",
+              "RelativeToolTip": "YouTubeBlazorApp\\Pages\\SearchResults.razor",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T21:44:22.059Z"
             },
             {
               "$type": "Document",
