@@ -4,43 +4,17 @@
 @using YouTubeBlazorApp.Models
 @using YouTubeBlazorApp.Services
 
-@code {
-    private YouTubeSearchResponse? results;
-    private string searchQuery = string.Empty;
-    private string? currentPageToken = null;
-
-    // Executes search
-    private async Task Search(string? pageToken = null)
-    {
-        results = await YouTubeService.SearchVideosAsync(searchQuery, pageToken);
-        currentPageToken = results?.NextPageToken;
-    }
-
-    // Navigate to the next page of results
-    private async Task GoToNextPage()
-    {
-        if (!string.IsNullOrEmpty(results?.NextPageToken))
-        {
-            await Search(results.NextPageToken);
-        }
-    }
-
-    // Navigate to the previous page of results
-    private async Task GoToPreviousPage()
-    {
-        if (!string.IsNullOrEmpty(results?.PrevPageToken))
-        {
-            await Search(results.PrevPageToken);
-        }
-    }
-}
-
 <!-- HTML Page Layout -->
 <h3 class="text-center">Search YouTube Videos</h3>
 <div class="d-flex justify-content-center mb-4">
     <input @bind="searchQuery" placeholder="Search..." class="form-control w-50" />
     <button @onclick="() => Search()" class="btn btn-primary ml-2">Search</button>
 </div>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger text-center">@errorMessage</p>
+}
 
 @if (results?.Items == null || results.Items.Count == 0)
 {
@@ -54,10 +28,16 @@ else
             {
                 <div class="col-md-4 mb-4">
                     <div class="card shadow-sm">
+
+                        <!-- Video Thumbnail Section -->
                         <img class="card-img-top" src="@item.Snippet?.Thumbnails?.High?.Url" alt="@item.Snippet?.Title" />
                         <div class="card-body">
+
+                            <!-- Video Details -->
                             <h5 class="card-title">@item.Snippet?.Title</h5>
                             <p class="card-text">@item.Snippet?.Description</p>
+
+                            <!-- View Details Button -->
                             <a href="/video/@item.Id.VideoId" class="btn btn-primary">
                                 View Details
                             </a>
@@ -88,6 +68,7 @@ else
     </div>
 }
 
+<!-- Code -->
 @code {
     private string? nextPageToken;
     private string? previousPageToken;
@@ -95,14 +76,38 @@ else
     private int totalPages = 6;
     private Dictionary<int, string?> pageTokens = new();
     private const int ResultsPerPage = 6;
+    private YouTubeSearchResponse? results;
+    private string searchQuery = string.Empty;
+    private string errorMessage = string.Empty;
 
-    // Perform search and reset pagination
-    private async Task Search()
+    // Executes search
+    private async Task Search(string? pageToken = null)
     {
-        currentPage = 1;
-        pageTokens.Clear();
-        var response = await YouTubeService.SearchVideosAsync(searchQuery, null);
-        UpdateResults(response);
+        // Input validation: Check if searchQuery is empty or whitespace
+        if (string.IsNullOrWhiteSpace(searchQuery))
+        {
+            errorMessage = "Search query cannot be empty.";
+            return;
+        }
+
+        try
+        {
+            // Reset pagination when a new search is performed
+            if (pageToken == null)
+            {
+                currentPage = 1;
+                pageTokens.Clear();
+            }
+
+            // Perform API call to search videos and update results
+            var response = await YouTubeService.SearchVideosAsync(searchQuery, pageToken);
+            UpdateResults(response);
+        }
+        catch
+        {
+            // Handle any errors
+            errorMessage = "An error occurred while fetching results.";
+        }
     }
 
     // Navigate to the next page
@@ -111,6 +116,7 @@ else
         if (currentPage < totalPages)
         {
             currentPage++;
+            Console.WriteLine($"Navigating to next page: {currentPage}"); // Debug log
             var response = await YouTubeService.SearchVideosAsync(searchQuery, nextPageToken);
             UpdateResults(response);
         }
@@ -131,12 +137,14 @@ else
     private void UpdateResults(YouTubeSearchResponse response)
     {
         results = response;
-
-        if (!pageTokens.ContainsKey(currentPage))
-            pageTokens[currentPage] = response.NextPageToken;
-
         nextPageToken = response.NextPageToken;
         previousPageToken = response.PrevPageToken;
+
+        if (!pageTokens.ContainsKey(currentPage))
+        {
+            pageTokens[currentPage] = nextPageToken;
+        }
     }
 }
+
 

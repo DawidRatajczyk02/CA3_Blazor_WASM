@@ -4,30 +4,16 @@
 @using YouTubeBlazorApp.Services
 @using YouTubeBlazorApp.Models
 
-@code {
-    [Parameter]
-    public string VideoId { get; set; } = string.Empty;
-
-    private YouTubeVideoDetailsResponse.VideoDetailsItem? videoDetails;
-
-    // Fetch video details
-    protected override async Task OnInitializedAsync()
-    {
-        var response = await YouTubeService.GetVideoDetailsAsync(VideoId);
-        videoDetails = response.Items?.FirstOrDefault();
-    }
-
-    // Navigate back to the search page
-    private void BackToSearch()
-    {
-        NavigationManager.NavigateTo("/");
-    }
-}
-
 <!-- HTML Page Layout -->
 <h3 class="text-center">Video Details</h3>
 
-@if (videoDetails == null)
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger text-center" role="alert">
+        @errorMessage
+    </div>
+}
+else if (videoDetails == null)
 {
     <div class="text-center">
         <p>Loading...</p>
@@ -37,16 +23,64 @@ else
 {
     <div class="container mt-5">
         <div class="row">
+
+            <!-- Video Thumbnail -->
             <div class="col-md-6">
                 <img src="@videoDetails.Snippet?.Thumbnails?.High?.Url" class="img-fluid rounded" alt="@videoDetails.Snippet?.Title" />
             </div>
+
+            <!-- Video Details -->
             <div class="col-md-6">
                 <h2>@videoDetails.Snippet?.Title</h2>
                 <p><strong>Description:</strong> @videoDetails.Snippet?.Description</p>
                 <p><strong>Channel:</strong> @videoDetails.Snippet?.ChannelTitle</p>
                 <p><strong>Published: </strong>@(!string.IsNullOrEmpty(videoDetails.Snippet?.PublishedAt)? DateTime.Parse(videoDetails.Snippet.PublishedAt).ToString("yyyy-MM-dd"): "N/A")</p>
+
+                <!-- Back Button -->
                 <button class="btn btn-secondary mt-3" @onclick="BackToSearch">Back to Search</button>
             </div>
         </div>
     </div>
+}
+
+<!-- Code -->
+@code {
+    [Parameter]
+    public string VideoId { get; set; } = string.Empty;
+    private string? errorMessage;
+
+    private YouTubeVideoDetailsResponse.VideoDetailsItem? videoDetails;
+
+    // Fetch video details
+    protected override async Task OnInitializedAsync()
+    {
+        // Check if VideoId is valid
+        if (string.IsNullOrWhiteSpace(VideoId))
+        {
+            errorMessage = "Invalid video ID.";
+            return;
+        }
+
+        try
+        {
+            var response = await YouTubeService.GetVideoDetailsAsync(VideoId);
+            videoDetails = response.Items?.FirstOrDefault();
+
+            // If videoDetails is null, show an error message
+            if (videoDetails == null)
+            {
+                errorMessage = "Video not found or an error occurred while fetching details.";
+            }
+        }
+        catch
+        {
+            errorMessage = "An error occurred while loading the video details.";
+        }
+    }
+
+    // Navigate back to the search page
+    private void BackToSearch()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }

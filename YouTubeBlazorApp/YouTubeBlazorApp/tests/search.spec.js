@@ -60,3 +60,48 @@ test.describe('Blazor YouTube Search Pagination Tests', () => {
         await expect(previousButton).toBeDisabled();
     });
 });
+
+test.describe('Blazor YouTube Video Details Tests', () => {
+    test('Should load video details page, display content, and navigate back to search page', async ({ page }) => {
+        // Navigate to app
+        await page.goto('https://localhost:7151');
+
+        // Locate the search bar and search button
+        const searchBar = page.locator('input[placeholder="Search..."]');
+        const searchButton = page.locator('button', { hasText: 'Search' });
+
+        // Perform a search
+        await searchBar.fill('mrbeast');
+        await searchButton.click();
+
+        // Wait for the search results to appear
+        const results = page.locator('.card');
+        await expect(results).toHaveCount(6);
+
+        // Click on the first video's "View Details" button
+        const viewDetailsButton = results.first().locator('a', { hasText: 'View Details' });
+        await viewDetailsButton.click();
+
+        // Verify the video details page URL
+        await expect(page).toHaveURL(/\/video\/.+/);
+
+        // Verify video details are displayed
+        const videoTitle = page.locator('h2');
+        const videoDescription = page.locator('p', { hasText: 'Description:' });
+        const videoChannel = page.locator('p', { hasText: 'Channel:' });
+        const videoPublishedDate = page.locator('p', { hasText: 'Published:' });
+
+        await expect(videoTitle).toBeVisible();
+        await expect(videoDescription).toBeVisible();
+        await expect(videoChannel).toBeVisible();
+        await expect(videoPublishedDate).toBeVisible();
+
+        // Locate and click the "Back to Search" button
+        const backToSearchButton = page.locator('button', { hasText: 'Back to Search' });
+        await backToSearchButton.click();
+
+        // Verify the search page is displayed
+        await expect(searchBar).toBeVisible();
+        await expect(searchButton).toBeVisible();
+    });
+});

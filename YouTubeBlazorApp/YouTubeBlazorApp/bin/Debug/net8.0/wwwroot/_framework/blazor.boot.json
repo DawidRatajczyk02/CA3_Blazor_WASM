@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "YouTubeBlazorApp",
   "resources": {
-    "hash": "sha256-DgSVcbXdbXBN297sMbLUQ7TimSdRVK7De7GS6wd9MyU=",
+    "hash": "sha256-oWxAiQ2bl/Mb25A2iBepiAKQd5ZhRxuiJB5+7L3jJic=",
     "jsModuleNative": {
       "dotnet.native.8.0.11.19x68zed9v.js": "sha256-VdKq87/z5NIxZKmuM+fv38XF+RcEb/bg3jVBwQSfwP4="
     },
@@ -215,10 +215,10 @@
       "mscorlib.wasm": "sha256-04e4k5XU8HWGB/dq/2+j84xzzGPflTs0IYWI0OxogVc=",
       "netstandard.wasm": "sha256-gnGZURPnoSmjXuYNCOJi5tt8qn2LRImWgue1Ru3/TDQ=",
       "System.Private.CoreLib.wasm": "sha256-6w3jYr0arcp8jnt4aeqh+AmqrLA6q7jl9rQYAwLzE0M=",
-      "YouTubeBlazorApp.wasm": "sha256-aizbq0dKjAip5axGd1cTJxa1wsOkg9Dr3tk+rj2bJJY="
+      "YouTubeBlazorApp.wasm": "sha256-TJ3pF+f/lOlG8Qcnf4PedLXqNYj4cJDS5+cgQHjwWBI="
     },
     "pdb": {
-      "YouTubeBlazorApp.pdb": "sha256-qhGgEGO8BApRYzSUHp4+MaeYAQDIUd33cMVNRtpdBWA="
+      "YouTubeBlazorApp.pdb": "sha256-3kTSjyj2/kmeoGXiJytGuVqSE+x06Jg8IGtobCDsmOk="
     }
   },
   "cacheBootResources": true,
