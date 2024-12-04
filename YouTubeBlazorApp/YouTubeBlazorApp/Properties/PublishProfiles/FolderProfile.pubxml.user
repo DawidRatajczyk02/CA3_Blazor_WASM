@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\bin\Release\net8.0\browser-wasm\publish\</_PublishTargetUrl>
+    <History>True|2024-12-04T01:35:28.1853457Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

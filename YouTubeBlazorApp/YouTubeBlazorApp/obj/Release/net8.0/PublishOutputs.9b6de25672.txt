@@ -1,0 +1,1 @@
+C:\CA3_BlazorWASM\CA3_Blazor_WASM\YouTubeBlazorApp\YouTubeBlazorApp\obj\Release\net8.0\browser-wasm\PubTmp\Out\web.config

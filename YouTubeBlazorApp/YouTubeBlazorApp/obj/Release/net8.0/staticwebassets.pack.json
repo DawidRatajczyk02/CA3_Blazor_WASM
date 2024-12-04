@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\bin\\Release\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\obj\\Release\\net8.0\\compressed\\rxbv9jq9p2.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\obj\\Release\\net8.0\\scopedcss\\bundle\\YouTubeBlazorApp.styles.css",
+      "PackagePath": "staticwebassets\\YouTubeBlazorApp.styles.css"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\CA3_BlazorWASM\\CA3_Blazor_WASM\\YouTubeBlazorApp\\YouTubeBlazorApp\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.YouTubeBlazorApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.YouTubeBlazorApp.props",
+      "PackagePath": "build\\YouTubeBlazorApp.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.YouTubeBlazorApp.props",
+      "PackagePath": "buildMultiTargeting\\YouTubeBlazorApp.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.YouTubeBlazorApp.props",
+      "PackagePath": "buildTransitive\\YouTubeBlazorApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
